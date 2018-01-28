@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  fireDelay: 0
 --- !u!4 &516864537
 Transform:
   m_ObjectHideFlags: 0

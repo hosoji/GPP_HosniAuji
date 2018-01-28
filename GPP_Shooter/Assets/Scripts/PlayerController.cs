@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour {
 	private float distance;
 	private Vector3 floor = new Vector3 (0, -17, 0);
 
+	private float t = 0;
+	[SerializeField] private float fireDelay = 0.5f;
+
 
 
 
@@ -32,8 +35,14 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		if (Input.GetMouseButton (0)) {
-			Vector3 pos = GetComponentsInChildren<MeshRenderer> () [1].transform.position;
-			Instantiate ((GameObject)Resources.Load ("Prefabs/Bullet"), pos , transform.rotation);
+			if (t > 0) {
+				t -= Time.deltaTime;
+		
+			} else {
+				Vector3 pos = GetComponentsInChildren<MeshRenderer> () [1].transform.position;
+				Instantiate ((GameObject)Resources.Load ("Prefabs/Bullet"), pos, transform.rotation);
+				t = fireDelay;
+			}
 		}
 	}
 }
