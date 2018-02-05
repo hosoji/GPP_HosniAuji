@@ -12,20 +12,17 @@ public class PlayerController : MonoBehaviour {
 	private Vector3 floor = new Vector3 (0, -17, 0);
 
 	private float t = 0;
-	[SerializeField] private float fireDelay = 0.5f;
-
-
-
+	[SerializeField] private float fireDelay = 0f;
 
 	void Update () {
 
-		float horizontal = (Input.GetAxis ("Horizontal") * Time.deltaTime) * speed;
-		float vertical = (Input.GetAxis ("Vertical") * Time.deltaTime) * speed;
+		var horizontal = (Input.GetAxis ("Horizontal") * Time.deltaTime) * speed;
+		var vertical = (Input.GetAxis ("Vertical") * Time.deltaTime) * speed;
 
 		transform.position = new Vector3 (transform.position.x + horizontal, transform.position.y,transform.position.z + vertical);
 
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-		Plane plane=new Plane(Vector3.up, floor);
+		Plane plane = new Plane(Vector3.up, floor);
 
 		if(plane.Raycast(ray, out distance)) {
 			Vector3 target = ray.GetPoint(distance);
@@ -43,6 +40,10 @@ public class PlayerController : MonoBehaviour {
 				Instantiate ((GameObject)Resources.Load ("Prefabs/Bullet"), pos, transform.rotation);
 				t = fireDelay;
 			}
+		}
+
+		if (Input.GetMouseButtonUp (0)) {
+			t = 0;
 		}
 	}
 }
