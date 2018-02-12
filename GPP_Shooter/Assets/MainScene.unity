@@ -150,7 +150,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 33a99a6facafa4dd986a8f62f69ccd24, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2300002, guid: 33a99a6facafa4dd986a8f62f69ccd24, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -173,6 +173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 864603264}
   - component: {fileID: 864603263}
+  - component: {fileID: 864603265}
   m_Layer: 0
   m_Name: '[GameManager]'
   m_TagString: Untagged
@@ -191,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27075375d7b344269231890a2d1a82c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenSpawns: 15
+  timeBetweenSpawns: 5
 --- !u!4 &864603264
 Transform:
   m_ObjectHideFlags: 0
@@ -203,8 +204,25 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &864603265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 864603262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44a435c95dd994d4baae431f33fcbac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallFlowerPrefab: {fileID: 1990278054471918, guid: 2bfb9a1c8d97a43149432deca3d0c65c,
+    type: 2}
+  stalkerPrefab: {fileID: 1152623057237146, guid: 5a76dfea243984ba2981fc8f666b9710,
+    type: 2}
+  normalBulletPrefab: {fileID: 1405401589513848, guid: baf59eae0b50849eca98a09b69f7fbb0,
+    type: 2}
 --- !u!1 &1712043034
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,7 +302,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1848161249
 GameObject:
@@ -349,7 +367,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1943492432 stripped
 GameObject:
@@ -452,5 +470,5 @@ Transform:
   m_LocalScale: {x: 5.1631365, y: 3.9186897, z: 5.2635713}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

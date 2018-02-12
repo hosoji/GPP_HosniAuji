@@ -9,7 +9,8 @@ public class Stalker : Enemy {
 
 	protected override void Start (){
 		base.Start ();
-		speed = 0.5f;
+        speed = Random.Range(0.5f, 0.8f);
+        health = 10;
 	}
 
 	void Update(){

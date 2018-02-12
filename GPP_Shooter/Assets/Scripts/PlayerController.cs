@@ -6,6 +6,10 @@ public class PlayerController : MonoBehaviour {
 
 	[SerializeField] private float speed;
 
+
+
+    private GameObject bullet;
+
 	private RaycastHit hit;
 
 	private float distance;
@@ -13,6 +17,10 @@ public class PlayerController : MonoBehaviour {
 
 	private float t = 0;
 	[SerializeField] private float fireDelay = 0f;
+
+    void Start(){
+        bullet = GameObject.Find("[GameManager]").GetComponent<PrefabHolder>().normalBulletPrefab;
+    }
 
 	void Update () {
 
@@ -37,7 +45,7 @@ public class PlayerController : MonoBehaviour {
 		
 			} else {
 				Vector3 pos = GetComponentsInChildren<MeshRenderer> () [1].transform.position;
-				Instantiate ((GameObject)Resources.Load ("Prefabs/Bullet"), pos, transform.rotation);
+                Instantiate ((GameObject)bullet, pos, transform.rotation);
 				t = fireDelay;
 			}
 		}

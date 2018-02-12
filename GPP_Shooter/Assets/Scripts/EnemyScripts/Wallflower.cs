@@ -7,7 +7,8 @@ public class Wallflower : Enemy{
 
 	protected override void Start (){
 		base.Start ();
-		speed = 1f;
+        speed = Random.Range(1, 1.5f);
+        health = 15;
 	}
 
 	void Update(){

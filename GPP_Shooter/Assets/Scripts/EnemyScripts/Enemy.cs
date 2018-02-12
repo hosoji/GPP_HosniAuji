@@ -25,25 +25,25 @@ namespace SubclassSandbox{
 
 		public abstract void Movement ();
 
-		protected virtual Vector3 TargetDestination(float x, float z){
+		protected Vector3 TargetDestination(float x, float z){
 			return new Vector3 (x, 0.0f, z);
 		}
 
-		protected virtual void LookAtPlayer(){
+		protected void LookAtPlayer(){
 			transform.LookAt (player.transform);
 		}
 
-		protected virtual void UpdatePosition(Vector3 target, float s){
+		protected void UpdatePosition(Vector3 target, float s){
 			transform.position += (target - transform.position) * (Time.deltaTime * s);
 		}
 
-		protected virtual void RotateAroundPlayer(float _angle, float radius, float s){
+		protected void RotateAroundPlayer(float _angle, float radius, float s){
 			var offset = new Vector3(Mathf.Sin(_angle),0, Mathf.Cos(_angle)) * radius;
 			var newTarget = player.transform.position + offset;
 			UpdatePosition (newTarget, s);
 		}
 
-		protected virtual bool CheckIfTargeted(){
+		protected bool CheckIfTargeted(){
 			bool check = false;
 
 			Vector3 targetDir = transform.position - player.transform.position;
@@ -55,7 +55,7 @@ namespace SubclassSandbox{
 			return check;
 		}
 
-		protected virtual float DistanceFromPlayer(){
+		protected float DistanceFromPlayer(){
 			return Vector3.Distance (transform.position, player.transform.position);
 		}
 
